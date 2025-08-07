@@ -12,11 +12,16 @@ import net.stickmanm.axontechnologies.item.ModItems;
 
 public class ModBlockTags {
     //Mimicarium Ore Replaceables
-    public static final TagKey<Block> MIMICARIUM_REPLACEABLE_STONE = TagKey.of(RegistryKeys.BLOCK, new Identifier("axontechnologies", "mimicarium_replaceable"));
-    public static final TagKey<Block> MIMICARIUM_REPLACEABLE_DEEPSLATE = TagKey.of(RegistryKeys.BLOCK, new Identifier("axontechnologies", "mimicarium_replaceable_deepslate"));
+    public static final TagKey<Block> MIMICARIUM_REPLACEABLE_STONE = TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "mimicarium_replaceable"));
+    public static final TagKey<Block> MIMICARIUM_REPLACEABLE_DEEPSLATE = TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "mimicarium_replaceable_deepslate"));
+    public static final TagKey<Block> FAKESLATE_REPLACEABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "fakeslate_replaceable"));
+    public static final TagKey<Block> FAKESTONE_REPLACEABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "fakestone_replaceable"));
 
-    //Dreadstone Ores Replaceables
-    public static final TagKey<Block> DREADSTONE_REPLACEABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier("axontechnologies", "dreadstone_replaceable"));
+    //MISC
+    public static final TagKey<Block> DREADSTONE_REPLACEABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "dreadstone_replaceable"));
+    public static final TagKey<Block> THUNDERED_STONE_REPLACEABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "thundered_stone_replaceable"));
+    public static final TagKey<Block> CORRUPTED_STONE_REPLACEABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "corrupted_stone_replaceable"));
+    public static final TagKey<Block> VOIDSTONE_REPLACEABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "voidstone_replaceable"));
 
 
 

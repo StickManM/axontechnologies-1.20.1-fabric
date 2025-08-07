@@ -120,9 +120,13 @@ public class ModBlocks {
 
     //MISC
 
+    public static final Block OCTUPLE_COMPRESSED_COBBLESTONE = registerBlock("octuple_compressed_cobblestone",
+            new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE).strength(2.1f).requiresTool()));
+
     //Mimic World
     public static final Block FAKESTONE = registerBlock("fakestone",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE).strength(2.1f).requiresTool()));
+
 
     public static final Block FAKESLATE = registerBlock("fakeslate",
             new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).strength(2.4f).requiresTool()));
@@ -140,6 +144,10 @@ public class ModBlocks {
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(ModBlocks.THUNDERED_STONE).strength(2.5f).requiresTool(),
                     UniformIntProvider.create(15, 25)));
 
+    public static final Block RENDERIUM_ORE = registerBlock("renderium_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(ModBlocks.THUNDERED_STONE).strength(2.5f).requiresTool(),
+                    UniformIntProvider.create(15, 25)));
+
     //Corruptionlands
 
     public static final Block CORRUPTED_DIRT = registerBlock("corrupted_dirt",
@@ -154,6 +162,26 @@ public class ModBlocks {
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(ModBlocks.CORRUPTED_STONE).strength(2.5f).requiresTool(),
                     UniformIntProvider.create(20, 27)));
 
+    public static final Block DENDERIUM_ORE = registerBlock("denderium_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(ModBlocks.CORRUPTED_STONE).strength(2.5f).requiresTool(),
+                    UniformIntProvider.create(15, 25)));
+
+    //Dimension Core Ores
+    public static final Block MWDC_ORE = registerBlock("mimic_world_dimension_core_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(ModBlocks.FAKESLATE).strength(4.5f).requiresTool(),
+                    UniformIntProvider.create(30, 37)));
+
+    public static final Block DCDC_ORE = registerBlock("dread_caverns_dimension_core_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(ModBlocks.DREADSTONE).strength(4.5f).requiresTool(),
+                    UniformIntProvider.create(30, 37)));
+
+    public static final Block TLDC_ORE = registerBlock("thunderlands_dimension_core_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(ModBlocks.THUNDERED_STONE).strength(4.5f).requiresTool(),
+                    UniformIntProvider.create(30, 37)));
+
+    public static final Block CLDC_ORE = registerBlock("corruptionlands_dimension_core_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(ModBlocks.CORRUPTED_STONE).strength(4.5f).requiresTool(),
+                    UniformIntProvider.create(30, 37)));
 
 
 

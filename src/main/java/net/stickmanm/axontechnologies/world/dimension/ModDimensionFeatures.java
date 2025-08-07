@@ -70,7 +70,7 @@ public class ModDimensionFeatures {
         BiomeModifications.addFeature(BiomeSelectors.all(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_CORRUPTIONLANDS_LAVA_PLACED_KEY);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.THUNDERED_PLAINS_KEY), GenerationStep.Feature.LAKES, LIQUID_THUNDER_LAKE_PLACED_KEY);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.CORRUPTED_PLAINS), GenerationStep.Feature.LAKES, CORRUPTIONLANDS_LAVA_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.CORRUPTED_PLAINS_KEY), GenerationStep.Feature.LAKES, CORRUPTIONLANDS_LAVA_PLACED_KEY);
 
 
 

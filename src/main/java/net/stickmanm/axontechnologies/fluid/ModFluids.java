@@ -10,12 +10,18 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.stickmanm.axontechnologies.AxonTechnologies;
 import net.stickmanm.axontechnologies.block.GXFluidBlock;
+import net.stickmanm.axontechnologies.block.LiquidCorruptionFluidBlock;
 import net.stickmanm.axontechnologies.block.LiquidThunderFluidBlock;
 
 public class ModFluids {
     public static FlowableFluid STILL_LIQUID_THUNDER;
     public static FlowableFluid FLOWING_LIQUID_THUNDER;
     public static Block LIQUID_THUNDER_BLOCK;
+
+    public static FlowableFluid STILL_LIQUID_CORRUPTION;
+    public static FlowableFluid FLOWING_LIQUID_CORRUPTION;
+    public static Block LIQUID_CORRUPTION_BLOCK;
+
 
     public static FlowableFluid STILL_GX;
     public static FlowableFluid FLOWING_GX;
@@ -29,6 +35,13 @@ public class ModFluids {
 
         LIQUID_THUNDER_BLOCK = Registry.register(Registries.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "liquid_thunder_block"),
                 new LiquidThunderFluidBlock(ModFluids.STILL_LIQUID_THUNDER, FabricBlockSettings.copyOf(Blocks.LAVA).liquid().pistonBehavior(PistonBehavior.DESTROY).replaceable()));
+
+        STILL_LIQUID_CORRUPTION = Registry.register(Registries.FLUID,
+                new Identifier(AxonTechnologies.MOD_ID, "liquid_corruption"), new LiquidCorruptionFluid.Still());
+        FLOWING_LIQUID_CORRUPTION = Registry.register(Registries.FLUID,
+                new Identifier(AxonTechnologies.MOD_ID, "flowing_liquid_corruption"), new LiquidCorruptionFluid.Flowing());
+        LIQUID_CORRUPTION_BLOCK = Registry.register(Registries.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "liquid_corruption_block"),
+                new LiquidCorruptionFluidBlock(STILL_LIQUID_CORRUPTION, FabricBlockSettings.copyOf(Blocks.LAVA).liquid().pistonBehavior(PistonBehavior.DESTROY).replaceable()));
 
         STILL_GX = Registry.register(Registries.FLUID,
                 new Identifier(AxonTechnologies.MOD_ID, "gx"), new GXFluid.Still());

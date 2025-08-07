@@ -19,6 +19,8 @@ public class ModModelProvider extends FabricModelProvider {
         //Ores
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MIMICARIUM_ORE);
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DEEPSLATE_MIMICARIUM_ORE);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.RENDERIUM_ORE);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DENDERIUM_ORE);
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.FAKESTONE_IRON_ORE);
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.FAKESTONE_GOLD_ORE);
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.FAKESLATE_IRON_ORE);
@@ -53,6 +55,12 @@ public class ModModelProvider extends FabricModelProvider {
         reinforcedDreadstonePool.stairs(ModBlocks.REINFORCED_DREADSTONE_STAIRS);
         reinforcedDreadstonePool.slab(ModBlocks.REINFORCED_DREADSTONE_SLAB);
 
+        //Dimension Core ore
+        blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MWDC_ORE);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DCDC_ORE);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.TLDC_ORE);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CLDC_ORE);
+
         //MISC
 
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.VOIDSTONE);
@@ -72,6 +80,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CORRUPTINITE_ORE);
 
 
+
+
         //SPAWN EGGS
         blockStateModelGenerator.registerParentedItemModel(ModItems.RED_ESSENCE_ZOMBIE_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
         blockStateModelGenerator.registerParentedItemModel(ModItems.GENETICALLY_MODIFIED_RED_ESSENCE_ZOMBIE_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
@@ -87,6 +97,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.RAW_NETHERITE, Models.GENERATED);
         itemModelGenerator.register(ModItems.AXON_ALLOY, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAZZORIUM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RENDERIUM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DENDERIUM, Models.GENERATED);
 
         //Buckests
         itemModelGenerator.register(ModItems.LIQUID_THUNDER_BUCKET, Models.GENERATED);
@@ -117,6 +129,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.DUODECUPLE_COMPRESSED_STICK, Models.GENERATED);
         itemModelGenerator.register(ModItems.TREDECUPLE_COMPRESSED_STICK, Models.GENERATED);
         itemModelGenerator.register(ModItems.QUATTUORDECUPLE_COMPRESSED_STICK, Models.GENERATED);
+
+        //Dimension Core
+        itemModelGenerator.register(ModItems.MWDC, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DCDC, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TLDC, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CLDC, Models.GENERATED);
 
         //Thunderanium
         itemModelGenerator.register(ModItems.RAW_THUNDERANIUM, Models.GENERATED);

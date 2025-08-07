@@ -18,6 +18,12 @@ public class ModItems {
     public static final Item RAW_NETHERITE = registerItem("raw_netherite",
             new Item(new FabricItemSettings().fireproof()));
 
+    public static final Item RENDERIUM = registerItem("renderium",
+            new Item(new FabricItemSettings().fireproof()));
+
+    public static final Item DENDERIUM = registerItem("denderium",
+            new Item(new FabricItemSettings().fireproof()));
+
     public static final Item RAW_THUNDERANIUM = registerItem("raw_thunderanium",
             new Item(new FabricItemSettings().fireproof()));
 
@@ -111,7 +117,18 @@ public class ModItems {
             new CompressedStickItem(new FabricItemSettings().fireproof()));
 
 
+    //DIMENSION CORES
+    public static final Item MWDC = registerItem("mimic_world_dimension_core",
+            new Item(new FabricItemSettings().fireproof()));
 
+    public static final Item DCDC = registerItem("dread_caverns_dimension_core",
+            new Item(new FabricItemSettings().fireproof()));
+
+    public static final Item TLDC = registerItem("thunderlands_dimension_core",
+            new Item(new FabricItemSettings().fireproof()));
+
+    public static final Item CLDC = registerItem("corruptionlands_dimension_core",
+            new Item(new FabricItemSettings().fireproof()));
 
 
 
@@ -364,6 +381,9 @@ public class ModItems {
     //BUCKETS
 
     public static final Item LIQUID_THUNDER_BUCKET = registerItem("liquid_thunder_bucket",
+            new BucketItem(ModFluids.STILL_LIQUID_THUNDER, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1).fireproof()));
+
+    public static final Item LIQUID_CORRUPTION_BUCKET = registerItem("liquid_corruption_bucket",
             new BucketItem(ModFluids.STILL_LIQUID_THUNDER, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1).fireproof()));
 
     public static final Item GX_BUCKET = registerItem("gx_bucket",

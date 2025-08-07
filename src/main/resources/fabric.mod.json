@@ -9,10 +9,10 @@
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/mod/axontechnologies",
-		"sources": "https://github.com/StickManM/axontechnologies",
-		"issues": "https://github.com/StickManM/axontechnologies/issues"
+		"sources": "https://github.com/StickManM/axontechnologies-1.20.1-fabric",
+		"issues": "https://github.com/StickManM/axontechnologies-1.20.1-fabric/issues"
 	},
-	"license": "LGPL-3.0-only",
+	"license": "Apache 2.0",
 	"icon": "assets/axontechnologies/icon.png",
 	"environment": "*",
 	"entrypoints": {
