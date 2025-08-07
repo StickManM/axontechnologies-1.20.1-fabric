@@ -1,4 +1,4 @@
-// 1.20.1	2025-08-06T17:13:32.0848104	Axon T.e.c.h.n.o.l.o.g.i.e.s./axontechnologies
+// 1.20.1	2025-08-07T16:43:56.1142857	Axon T.e.c.h.n.o.l.o.g.i.e.s./axontechnologies
 7344583f7b89e8c5dc2a8c2fbc6af0f885bd6efd data\axontechnologies\worldgen\configured_feature\fakestones_iron_ore.json
 4c36d5e3143bd5dd0255b7cf40fc3b10cd006111 data\axontechnologies\worldgen\placed_feature\thunderanium_ore.json
 a3397f617f9ca73e3f2c662c61511c1629d0f37f data\axontechnologies\worldgen\configured_feature\renderium_ore.json
@@ -7,8 +7,8 @@ b6ee066f7bc927d30e133ed2b717b8b7a7aa7fd3 data\axontechnologies\worldgen\placed_f
 b311d935cb0599b8f16f7512557c84bf21b3cc7d data\axontechnologies\worldgen\placed_feature\voidstone.json
 5f7a3ac2ff214ca9859fb452b3eb30c6865a8035 data\axontechnologies\worldgen\placed_feature\corruption_block_ore.json
 7ed779b1b9e87285c9c4a1045d3dcf645bc9ee7e data\axontechnologies\worldgen\configured_feature\ore_liquid_thunder.json
-7d03cbb5bd55656e29bab7f6cc03d4ee6df42f51 data\axontechnologies\worldgen\configured_feature\corruptinite_ore.json
 834e53a3d6b618431fc7a9d2b1d3dbfe91bc08e6 data\axontechnologies\worldgen\configured_feature\thundered_tree.json
+7d03cbb5bd55656e29bab7f6cc03d4ee6df42f51 data\axontechnologies\worldgen\configured_feature\corruptinite_ore.json
 e2ac04eaeb5d2a4b3558189c3a7180fbbfff6799 data\axontechnologies\worldgen\placed_feature\fakestones_gold_ore.json
 12c4383e00d49955a37154a3850a10ff12f5896e data\axontechnologies\worldgen\configured_feature\denderium_ore.json
 d50fb112fff4a81c2a05cbc4e39b785907896584 data\axontechnologies\worldgen\placed_feature\void_coal_ore.json

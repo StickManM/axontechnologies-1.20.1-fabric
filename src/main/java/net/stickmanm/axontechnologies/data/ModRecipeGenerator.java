@@ -65,6 +65,12 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         offerSmelting(exporter, List.of(ModBlocks.CORRUPTINITE_ORE), RecipeCategory.MISC, ModItems.UNSTABLE_CORRUPTINITE,
                 5f, 75, "corruptinite");
 
+        offerSmelting(exporter, List.of(ModBlocks.RENDERIUM_ORE), RecipeCategory.MISC, ModItems.RENDERIUM,
+                5f, 75, "renderium");
+
+        offerSmelting(exporter, List.of(ModBlocks.DENDERIUM_ORE), RecipeCategory.MISC, ModItems.DENDERIUM,
+                5f, 75, "denderium");
+
 
         offerBlasting(exporter, List.of(ModItems.RAW_THUNDERANIUM), RecipeCategory.MISC, ModItems.REFINED_THUNDERANIUM,
                 5f, 75, "thunderanium");
@@ -77,6 +83,18 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
         offerBlasting(exporter, List.of(ModItems.DARK_THUNDERANIUM_CLUSTER), RecipeCategory.MISC, ModItems.DARK_THUNDERANIUM_INGOT,
                 1000f, 100, "dark_thunderanium");
+
+        offerBlasting(exporter, List.of(ModBlocks.MWDC_ORE), RecipeCategory.MISC, ModItems.MWDC,
+                2000f, 250, "dimension_core");
+
+        offerBlasting(exporter, List.of(ModBlocks.DCDC_ORE), RecipeCategory.MISC, ModItems.DCDC,
+                2000f, 250, "dimension_core");
+
+        offerBlasting(exporter, List.of(ModBlocks.TLDC_ORE), RecipeCategory.MISC, ModItems.TLDC,
+                2000f, 250, "dimension_core");
+
+        offerBlasting(exporter, List.of(ModBlocks.CLDC_ORE), RecipeCategory.MISC, ModItems.CLDC,
+                2000f, 250, "dimension_core");
 
         //BLAST FURNACE +
         offerBlasting(exporter, List.of(Blocks.SAND), RecipeCategory.BUILDING_BLOCKS, Blocks.GLASS,
@@ -348,6 +366,32 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(ModItems.AXON_ALLOY))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.AXON_ALLOY)));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RAZZORIUM)
+                .pattern("MAD")
+                .pattern("GHG")
+                .pattern("TAC")
+                .input('M', ModItems.MWDC)
+                .input('D', ModItems.DCDC)
+                .input('T', ModItems.TLDC)
+                .input('C', ModItems.CLDC)
+                .input('H', ModItems.ULTIMATE_HOE_TROPHY)
+                .input('G', ModItems.GX_BUCKET)
+                .input('A', ModItems.AXON_ALLOY)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.GX_BUCKET),
+                        FabricRecipeProvider.conditionsFromItem(ModItems.RAZZORIUM))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.RAZZORIUM)));
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.AXON_TOOL)
+                .pattern("RRR")
+                .pattern("RRR")
+                .pattern("RSR")
+                .input('R', ModItems.RAZZORIUM)
+                .input('S', ModItems.QUATTUORDECUPLE_COMPRESSED_STICK)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.RAZZORIUM),
+                        FabricRecipeProvider.conditionsFromItem(ModItems.AXON_TOOL))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.AXON_TOOL)));
+
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TICKLE_TRAVIS_TICKLER)
                 .input(ModItems.AXON_TOOL)
@@ -355,6 +399,18 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(ModItems.AXON_TOOL),
                         FabricRecipeProvider.conditionsFromItem(ModItems.TICKLE_TRAVIS_TICKLER))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.TICKLE_TRAVIS_TICKLER)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RED_ESSENCE, 12)
+                .input(ModItems.RENDERIUM)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.RENDERIUM),
+                        FabricRecipeProvider.conditionsFromItem(ModItems.RED_ESSENCE))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.RED_ESSENCE)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DARK_ESSENCE, 12)
+                .input(ModItems.DENDERIUM)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.DENDERIUM),
+                        FabricRecipeProvider.conditionsFromItem(ModItems.DARK_ESSENCE))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.DARK_ESSENCE)));
 
         //Fuels
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.THUNDER_FUEL, 2)

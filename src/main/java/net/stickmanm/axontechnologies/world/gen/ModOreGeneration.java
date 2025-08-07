@@ -41,8 +41,7 @@ public class ModOreGeneration {
 
 
         //Dimension Core
-        BiomeModifications.addFeature(BiomeSelectors.all(),
-                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.DIMENSION_CORE_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.all(), GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.DIMENSION_CORE_PLACED_KEY);
 
     }
 }

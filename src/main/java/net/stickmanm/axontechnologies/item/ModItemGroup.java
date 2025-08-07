@@ -20,6 +20,8 @@ public class ModItemGroup {
                         entries.add(ModItems.RAW_NETHERITE);
                         entries.add(ModItems.RED_ESSENCE);
                         entries.add(ModItems.DARK_ESSENCE);
+                        entries.add(ModItems.RENDERIUM);
+                        entries.add(ModItems.DENDERIUM);
                         entries.add(ModItems.AXON_ALLOY);
 
                         entries.add(ModItems.VOID_COAL);
@@ -152,8 +154,15 @@ public class ModItemGroup {
                         entries.add(ModItems.QUATTUORDECUPLE_COMPRESSED_STICK);
 
 
+                        entries.add(ModItems.MWDC);
+                        entries.add(ModItems.DCDC);
+                        entries.add(ModItems.TLDC);
+                        entries.add(ModItems.CLDC);
+
+
 
                         entries.add(ModItems.LIQUID_THUNDER_BUCKET);
+                        entries.add(ModItems.LIQUID_CORRUPTION_BUCKET);
                         entries.add(ModItems.GX_BUCKET);
 
 
@@ -194,11 +203,18 @@ public class ModItemGroup {
                         entries.add(ModBlocks.CHARGED_DIRT);
                         entries.add(ModBlocks.THUNDERED_STONE);
                         entries.add(ModBlocks.THUNDERANIUM_ORE);
+                        entries.add(ModBlocks.RENDERIUM_ORE);
 
                         entries.add(ModBlocks.CORRUPTED_DIRT);
                         entries.add(ModBlocks.CORRUPTED_STONE);
                         entries.add(ModBlocks.CORRUPTION_BLOCK);
                         entries.add(ModBlocks.CORRUPTINITE_ORE);
+                        entries.add(ModBlocks.DENDERIUM_ORE);
+
+                        entries.add(ModBlocks.MWDC_ORE);
+                        entries.add(ModBlocks.DCDC_ORE);
+                        entries.add(ModBlocks.TLDC_ORE);
+                        entries.add(ModBlocks.CLDC_ORE);
 
 
                     }).build());
