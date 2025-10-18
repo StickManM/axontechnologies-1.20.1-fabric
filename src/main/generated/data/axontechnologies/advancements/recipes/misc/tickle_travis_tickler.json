@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_axon_tool": {
+    "has_razzor": {
       "conditions": {
         "items": [
           {
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_axon_tool",
+      "has_razzor",
       "has_the_recipe"
     ]
   ],

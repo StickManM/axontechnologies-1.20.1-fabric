@@ -20,7 +20,7 @@ public class LiquidCorruptionFluidBlock extends FluidBlock {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL) {
             if (entity instanceof LivingEntity livingEntity) {
                 if (!livingEntity.isInvulnerableTo(world.getDamageSources().lightningBolt())) {
-                    livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.THUNDER_POISONING, 2));
+                    livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.THUNDER_POISONING, 4));
                     livingEntity.removeStatusEffect(ModEffects.ANTI_CORRUPTED_GLITCHSTER);
                 }
             }

@@ -382,21 +382,21 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.RAZZORIUM)));
 
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.AXON_TOOL)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RAZZOR)
                 .pattern("RRR")
                 .pattern("RRR")
                 .pattern("RSR")
                 .input('R', ModItems.RAZZORIUM)
                 .input('S', ModItems.QUATTUORDECUPLE_COMPRESSED_STICK)
                 .criterion(FabricRecipeProvider.hasItem(ModItems.RAZZORIUM),
-                        FabricRecipeProvider.conditionsFromItem(ModItems.AXON_TOOL))
-                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.AXON_TOOL)));
+                        FabricRecipeProvider.conditionsFromItem(ModItems.RAZZOR))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.RAZZOR)));
 
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TICKLE_TRAVIS_TICKLER)
-                .input(ModItems.AXON_TOOL)
+                .input(ModItems.RAZZOR)
                 .input(Items.FEATHER)
-                .criterion(FabricRecipeProvider.hasItem(ModItems.AXON_TOOL),
+                .criterion(FabricRecipeProvider.hasItem(ModItems.RAZZOR),
                         FabricRecipeProvider.conditionsFromItem(ModItems.TICKLE_TRAVIS_TICKLER))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.TICKLE_TRAVIS_TICKLER)));
 

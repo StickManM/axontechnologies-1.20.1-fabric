@@ -134,7 +134,7 @@ public class ModItemGroup {
                         entries.add(ModItems.ANTIGLITCH_SWORD);
                         entries.add(ModItems.VANILLA_HOE);
                         entries.add(ModItems.ULTIMATE_HOE_TROPHY);
-                        entries.add(ModItems.AXON_TOOL);
+                        entries.add(ModItems.RAZZOR);
                         entries.add(ModItems.TICKLE_TRAVIS_TICKLER);
 
                         //COMPRESSED STICKS

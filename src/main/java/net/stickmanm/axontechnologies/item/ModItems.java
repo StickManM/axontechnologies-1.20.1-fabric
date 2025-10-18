@@ -247,7 +247,7 @@ public class ModItems {
             new ModHoeItem(ModToolMaterials.DARK_THUNDERANIUM, 0,-3f,
                     new FabricItemSettings()));
 
-    public static final Item AXON_TOOL = registerItem("axon_tool",
+    public static final Item RAZZOR = registerItem("razzor",
             new AxonToolItem(ModToolMaterials.RAZZORIUM, 2147483646,100000f,
                     new FabricItemSettings()));
 
@@ -384,7 +384,7 @@ public class ModItems {
             new BucketItem(ModFluids.STILL_LIQUID_THUNDER, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1).fireproof()));
 
     public static final Item LIQUID_CORRUPTION_BUCKET = registerItem("liquid_corruption_bucket",
-            new BucketItem(ModFluids.STILL_LIQUID_THUNDER, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1).fireproof()));
+            new BucketItem(ModFluids.STILL_LIQUID_CORRUPTION, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1).fireproof()));
 
     public static final Item GX_BUCKET = registerItem("gx_bucket",
             new BucketItem(ModFluids.STILL_GX, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1).fireproof()));
