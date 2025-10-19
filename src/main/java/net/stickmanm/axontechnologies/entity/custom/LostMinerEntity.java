@@ -5,6 +5,8 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.mob.WardenEntity;
@@ -42,10 +44,10 @@ public class LostMinerEntity extends PathAwareEntity implements GeoEntity {
                 .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 0.4f)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 15)
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 32.0D)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 8.5f)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 15f)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED, 5.0f)
                 .add(EntityAttributes.GENERIC_LUCK, 1.5f)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2f);
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25f);
 
 
     }
@@ -67,6 +69,8 @@ public class LostMinerEntity extends PathAwareEntity implements GeoEntity {
         this.targetSelector.add(2, new ActiveTargetGoal<>(this, MerchantEntity.class, true));
         this.targetSelector.add(3, new ActiveTargetGoal<>(this, VillagerEntity.class, true));
         this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.NETHERITE_PICKAXE));
+        this.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 200, 0, false, false, false));
+        this.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, -1, 0, false, false, false));
 
 
 

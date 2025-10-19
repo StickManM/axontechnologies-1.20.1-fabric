@@ -169,6 +169,11 @@ public class ModItemGroup {
                         //BLOCKS
                         entries.add(ModBlocks.MIMICARIUM_ORE);
                         entries.add(ModBlocks.DEEPSLATE_MIMICARIUM_ORE);
+                        entries.add(ModBlocks.FAKESTONE_IRON_ORE);
+                        entries.add(ModBlocks.FAKESTONE_GOLD_ORE);
+                        entries.add(ModBlocks.FAKESLATE_IRON_ORE);
+                        entries.add(ModBlocks.FAKESLATE_GOLD_ORE);
+
 
                         entries.add(ModBlocks.THUNDERED_LOG);
                         entries.add(ModBlocks.THUNDERED_WOOD);

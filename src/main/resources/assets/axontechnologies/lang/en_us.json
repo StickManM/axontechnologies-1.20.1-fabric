@@ -217,7 +217,7 @@
   "block.axontechnologies.gx_block": "GlitchX Formula",
   "block.axontechnologies.liquid_life_essence_block": "Liquid Life Essence Block",
   "block.axontechnologies.thunderic_glitching_acid_block": "Thunderic Glitching Acid",
-  "block.axontechnologies.infinite_water_block": "Infinite Water",
+  "block.axontechnologies.infinite_water_block": "Infinite Water (WARNING WILL DESTROY WORLD)",
 
   "effect.axontechnologies.glitchster": "Glitchster",
   "effect.axontechnologies.glitchster2": "Glitchster II",
@@ -225,6 +225,7 @@
   "effect.axontechnologies.glitchster4": "Glitchster IV",
   "effect.axontechnologies.glitchster5": "Glitchster V",
   "effect.axontechnologies.glitchx": "GlitchX",
+  "effect.axontechnologies.overdose": "Glitchster Overdose",
   "effect.axontechnologies.neutralized_glitchster": "Neutralized Glitchster",
   "effect.axontechnologies.corrupted_glitchster": "Corrupted Glitchster III",
   "effect.axontechnologies.corrupted_glitchster2": "Corrupted Glitchster IV",

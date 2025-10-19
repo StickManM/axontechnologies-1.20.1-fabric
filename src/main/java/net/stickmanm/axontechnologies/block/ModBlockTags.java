@@ -23,6 +23,9 @@ public class ModBlockTags {
     public static final TagKey<Block> CORRUPTED_STONE_REPLACEABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "corrupted_stone_replaceable"));
     public static final TagKey<Block> VOIDSTONE_REPLACEABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "voidstone_replaceable"));
 
+    public static final TagKey<Block> REINFORCED_DREADSTONE = TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "reinforced_dreadstone"));
+
+
 
 
 

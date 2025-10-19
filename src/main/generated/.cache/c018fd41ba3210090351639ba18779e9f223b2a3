@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-18T11:59:22.5595788	Axon T.e.c.h.n.o.l.o.g.i.e.s./Recipes
+// 1.20.1	2025-10-18T20:28:14.1855869	Axon T.e.c.h.n.o.l.o.g.i.e.s./Recipes
 b391e539d9280d111d6254943b1ede210e9eb74b data\axontechnologies\recipes\thunderanium_chestplate.json
 e7e7d0d55a4b61dfa470e408fd89d1a6a99257f8 data\axontechnologies\recipes\dark_thunderanium_cluster.json
 dffdba4c5b4e366a0c8152d8a868d8ce4e382fec data\axontechnologies\recipes\axon_alloy.json
@@ -189,8 +189,8 @@ beb37503748df308bd819ab572c8f23c27f39d30 data\axontechnologies\recipes\quadruple
 eacdc9b06df8fa761d0d54cd997f52a83c4e8959 data\axontechnologies\recipes\mimicarium_from_smelting_mimicarium_ore.json
 8d247a43ef788578658faa728fabf45655627ec5 data\axontechnologies\recipes\tickle_travis_tickler.json
 414795dcd5b716636cf3677b8e3ab3888856e849 data\axontechnologies\advancements\recipes\misc\thunderanium_sword.json
-85edb8665b66d296b9ad4fd4c4592bfb98600524 data\axontechnologies\recipes\dreaded_igniter.json
 7282fab503c8e9f696dd337f05ff607752a4b486 data\axontechnologies\advancements\recipes\misc\decuple_compressed_stick.json
+85edb8665b66d296b9ad4fd4c4592bfb98600524 data\axontechnologies\recipes\dreaded_igniter.json
 9db35d798155411ceee9621119a04f5623ced129 data\axontechnologies\advancements\recipes\misc\mimicarium_from_smelting_deepslate_mimicarium_ore.json
 91c6ecf48457cad5b4a0d638cf23681bbd06dbee data\axontechnologies\recipes\axon_alloy_helmet.json
 e1284d995f0c280d65c1319936639d9fb3277c87 data\axontechnologies\recipes\corruptinite_axon_alloy_boots.json

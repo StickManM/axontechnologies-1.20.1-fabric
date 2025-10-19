@@ -3,10 +3,10 @@
   "downfall": 0.4,
   "has_precipitation": false,
   "effects": {
-    "sky_color": 6558226,
-    "fog_color": 6558226,
-    "water_color": 6558226,
-    "water_fog_color": 6558226
+    "sky_color": 7865862,
+    "fog_color": 7865862,
+    "water_color": 7865862,
+    "water_fog_color": 7865862
   },
   "spawners": {
     "monster": [

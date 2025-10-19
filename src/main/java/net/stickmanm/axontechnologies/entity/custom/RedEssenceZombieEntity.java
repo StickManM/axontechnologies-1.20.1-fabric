@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.brain.sensor.HurtBySensor;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -17,6 +18,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldEvents;
 import net.stickmanm.axontechnologies.entity.ModEntities;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -62,14 +64,37 @@ public class RedEssenceZombieEntity extends PathAwareEntity implements GeoEntity
 
         this.goalSelector.add(4, new LookAroundGoal(this));
 
-        this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
-        this.targetSelector.add(2, new ActiveTargetGoal<>(this, MerchantEntity.class, true));
-        this.targetSelector.add(2, new ActiveTargetGoal<>(this, VillagerEntity.class, true));
-        this.targetSelector.add(3, new ActiveTargetGoal<>(this, WardenEntity.class, true));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, false));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, LostMinerEntity.class, false));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, MerchantEntity.class, false));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, VillagerEntity.class, false));
+        this.targetSelector.add(3, new ActiveTargetGoal<>(this, WardenEntity.class, false));
         this.addStatusEffect(new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, -1, 2,false, false, false));
 
 
 
+    }
+
+
+    public void convertTo(EntityType<? extends RedEssenceZombieEntity> entityType) {
+        RedEssenceZombieEntity zombieEntity = this.convertTo(entityType, true);
+        if (zombieEntity != null) {
+            zombieEntity.applyAttributeModifiers(zombieEntity.getWorld().getLocalDifficulty(zombieEntity.getBlockPos()).getClampedLocalDifficulty());
+        }
+    }
+
+
+    protected void applyAttributeModifiers(float chanceMultiplier) {
+        this.createMobAttributes();
+        this.getAttributeInstance(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE).addPersistentModifier(new EntityAttributeModifier("Random spawn bonus", this.random.nextDouble() * (double)0.05f, EntityAttributeModifier.Operation.ADDITION));
+        double d = this.random.nextDouble() * 1.5 * (double)chanceMultiplier;
+        if (d > 1.0) {
+            this.getAttributeInstance(EntityAttributes.GENERIC_FOLLOW_RANGE).addPersistentModifier(new EntityAttributeModifier("Random zombie-spawn bonus", d, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
+        }
+        if (this.random.nextFloat() < chanceMultiplier * 0.05f) {
+            this.getAttributeInstance(EntityAttributes.ZOMBIE_SPAWN_REINFORCEMENTS).addPersistentModifier(new EntityAttributeModifier("Leader zombie bonus", this.random.nextDouble() * 0.25 + 0.5, EntityAttributeModifier.Operation.ADDITION));
+            this.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).addPersistentModifier(new EntityAttributeModifier("Leader zombie bonus", this.random.nextDouble() * 3.0 + 1.0, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
+        }
     }
 
 

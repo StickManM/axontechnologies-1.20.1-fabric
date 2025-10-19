@@ -14,6 +14,7 @@ public class ModEffects {
     public static final StatusEffect GLITCHSTERIV = new GlitchsterIVEffect();
     public static final StatusEffect GLITCHSTERV = new GlitchsterVEffect();
     public static final StatusEffect GLITCHSTERX = new GlitchsterXEffect();
+    public static final StatusEffect OVERDOSE = new OverdoseEffect();
     public static final StatusEffect NEUTRALIZED_GLITCHSTER = new NeutralizedGlitchsterEffect();
     public static final StatusEffect THUNDER_POISONING = new ThunderPoisoningEffect();
 
@@ -30,6 +31,7 @@ public class ModEffects {
         Registry.register(Registries.STATUS_EFFECT, new Identifier(AxonTechnologies.MOD_ID, "glitchster4"), GLITCHSTERIV);
         Registry.register(Registries.STATUS_EFFECT, new Identifier(AxonTechnologies.MOD_ID, "glitchster5"), GLITCHSTERV);
         Registry.register(Registries.STATUS_EFFECT, new Identifier(AxonTechnologies.MOD_ID, "glitchx"), GLITCHSTERX);
+        Registry.register(Registries.STATUS_EFFECT, new Identifier(AxonTechnologies.MOD_ID, "overdose"), OVERDOSE);
         Registry.register(Registries.STATUS_EFFECT, new Identifier(AxonTechnologies.MOD_ID, "neutralized_glitchster"), NEUTRALIZED_GLITCHSTER);
         Registry.register(Registries.STATUS_EFFECT, new Identifier(AxonTechnologies.MOD_ID, "corrupted_glitchster"), CORRUPTED_GLITCHSTER);
         Registry.register(Registries.STATUS_EFFECT, new Identifier(AxonTechnologies.MOD_ID, "corrupted_glitchster2"), CORRUPTED_GLITCHSTERII);

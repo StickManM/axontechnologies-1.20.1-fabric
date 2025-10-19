@@ -7,6 +7,8 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.stickmanm.axontechnologies.AxonTechnologies;
+import net.stickmanm.axontechnologies.block.ModBlockTags;
 import net.stickmanm.axontechnologies.block.ModBlocks;
 
 import java.util.concurrent.CompletableFuture;
@@ -70,7 +72,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                     .add(ModBlocks.THUNDERED_STONE)
                     .add(ModBlocks.CORRUPTED_STONE)
-                    .add(ModBlocks.DREADSTONE)
                     .add(ModBlocks.FAKESTONE_IRON_ORE)
                     .add(ModBlocks.FAKESLATE_IRON_ORE)
                     .add(ModBlocks.OCTUPLE_COMPRESSED_COBBLESTONE);
@@ -85,6 +86,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
             getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                     .add(ModBlocks.DREADSTONE_NETHERITE_ORE)
+                    .add(ModBlocks.DREADSTONE)
                     .add(ModBlocks.DREADSTONE_DIAMOND_ORE)
                     .add(ModBlocks.THUNDERANIUM_PORTAL_FRAME);
 
@@ -128,5 +130,21 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                     .add(ModBlocks.THUNDERED_WOOD)
                     .add(ModBlocks.STRIPPED_THUNDERED_LOG)
                     .add(ModBlocks.STRIPPED_THUNDERED_WOOD);
+
+            getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "reinforced_dreadstone")))
+                    .add(ModBlocks.REINFORCED_DREADSTONE)
+                    .add(ModBlocks.REINFORCED_DREADSTONE_DOOR)
+                    .add(ModBlocks.REINFORCED_DREADSTONE_GLASS)
+                    .add(ModBlocks.REINFORCED_DREADSTONE_SLAB)
+                    .add(ModBlocks.REINFORCED_DREADSTONE_WALL)
+                    .add(ModBlocks.REINFORCED_DREADSTONE_TRAPDOOR)
+                    .add(ModBlocks.REINFORCED_DREADSTONE_STAIRS);
+
+            getOrCreateTagBuilder(BlockTags.WITHER_IMMUNE)
+                    .addTag(ModBlockTags.REINFORCED_DREADSTONE);
+
+            getOrCreateTagBuilder(BlockTags.DRAGON_IMMUNE)
+                    .addTag(ModBlockTags.REINFORCED_DREADSTONE);
+
         }
     }

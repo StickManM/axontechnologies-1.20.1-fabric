@@ -63,11 +63,13 @@ public class DarkEssenceZombieEntity extends PathAwareEntity implements GeoEntit
 
         this.goalSelector.add(4, new LookAroundGoal(this));
 
-        this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
-        this.targetSelector.add(2, new ActiveTargetGoal<>(this, RedEssenceZombieEntity.class, true));
-        this.targetSelector.add(2, new ActiveTargetGoal<>(this, MerchantEntity.class, true));
-        this.targetSelector.add(3, new ActiveTargetGoal<>(this, VillagerEntity.class, true));
-        this.targetSelector.add(3, new ActiveTargetGoal<>(this, WardenEntity.class, true));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, false));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, RedEssenceZombieEntity.class, false));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, GeneticallyModifiedRedEssenceZombieEntity.class, false));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, LostMinerEntity.class, false));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, MerchantEntity.class, false));
+        this.targetSelector.add(3, new ActiveTargetGoal<>(this, VillagerEntity.class, false));
+        this.targetSelector.add(3, new ActiveTargetGoal<>(this, WardenEntity.class, false));
         this.addStatusEffect(new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, -1, 2,false, false, false));
 
 
