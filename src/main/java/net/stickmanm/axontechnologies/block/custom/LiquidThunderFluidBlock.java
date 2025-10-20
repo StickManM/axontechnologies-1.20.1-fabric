@@ -1,4 +1,4 @@
-package net.stickmanm.axontechnologies.block;
+package net.stickmanm.axontechnologies.block.custom;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
@@ -11,17 +11,18 @@ import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import net.stickmanm.axontechnologies.effect.ModEffects;
 
-public class LiquidCorruptionFluidBlock extends FluidBlock {
-    public LiquidCorruptionFluidBlock(FlowableFluid fluid, Settings settings) {
+public class LiquidThunderFluidBlock extends FluidBlock {
+    public LiquidThunderFluidBlock(FlowableFluid fluid, Settings settings) {
         super(fluid, settings);
     }
 
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL) {
-            if (entity instanceof LivingEntity livingEntity) {
+            if (entity instanceof LivingEntity) {
+                LivingEntity livingEntity = (LivingEntity)entity;
                 if (!livingEntity.isInvulnerableTo(world.getDamageSources().lightningBolt())) {
-                    livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.THUNDER_POISONING, 4));
-                    livingEntity.removeStatusEffect(ModEffects.ANTI_CORRUPTED_GLITCHSTER);
+                    livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.THUNDER_POISONING, 2));
+                    livingEntity.removeStatusEffect(ModEffects.ANTIGLITCHSTER);
                 }
             }
 

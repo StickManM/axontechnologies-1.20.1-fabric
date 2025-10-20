@@ -1,19 +1,18 @@
 package net.stickmanm.axontechnologies.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.stickmanm.axontechnologies.AxonTechnologies;
-import net.stickmanm.axontechnologies.item.ModItemGroup;
+import net.stickmanm.axontechnologies.block.custom.CorruptionBlock;
+import net.stickmanm.axontechnologies.block.custom.ThunderaniumTntBlock;
 import net.stickmanm.axontechnologies.world.tree.ThunderedSaplingGenerator;
 
 public class ModBlocks {
@@ -123,6 +122,9 @@ public class ModBlocks {
     public static final Block OCTUPLE_COMPRESSED_COBBLESTONE = registerBlock("octuple_compressed_cobblestone",
             new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE).strength(2.1f).requiresTool()));
 
+    public static final Block THUNDERANIUM_TNT = registerBlock("thunderanium_tnt",
+            new ThunderaniumTntBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
     //Mimic World
     public static final Block FAKESTONE = registerBlock("fakestone",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE).strength(2.1f).requiresTool()));
@@ -156,7 +158,7 @@ public class ModBlocks {
     public static final Block CORRUPTED_STONE = registerBlock("corrupted_stone",
             new Block(FabricBlockSettings.copyOf(ModBlocks.THUNDERED_STONE).strength(2.3f).requiresTool()));
     public static final Block CORRUPTION_BLOCK = registerBlock("corruption_block",
-            new Block(FabricBlockSettings.copyOf(ModBlocks.THUNDERED_STONE).strength(2.3f).requiresTool()));
+            new CorruptionBlock(FabricBlockSettings.copyOf(ModBlocks.THUNDERED_STONE).strength(2.3f).requiresTool()));
 
     public static final Block CORRUPTINITE_ORE = registerBlock("corruptinite_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(ModBlocks.CORRUPTED_STONE).strength(2.5f).requiresTool(),

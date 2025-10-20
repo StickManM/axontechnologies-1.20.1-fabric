@@ -18,8 +18,6 @@ import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
-import net.stickmanm.axontechnologies.AxonTechnologies;
-import net.stickmanm.axontechnologies.effect.AntiGlitchsterEffect;
 import net.stickmanm.axontechnologies.effect.ModEffects;
 import net.stickmanm.axontechnologies.entity.ModEntities;
 import org.jetbrains.annotations.Nullable;

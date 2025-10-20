@@ -59,7 +59,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                     .add(ModBlocks.CLDC_ORE)
                     .add(ModBlocks.TLDC_ORE);
 
-            getOrCreateTagBuilder(BlockTags.AXE_MINEABLE);
+            getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                    .add(ModBlocks.THUNDERED_LOG)
+                    .add(ModBlocks.THUNDERED_PLANKS)
+                    .add(ModBlocks.THUNDERED_WOOD)
+                    .add(ModBlocks.STRIPPED_THUNDERED_LOG)
+                    .add(ModBlocks.STRIPPED_THUNDERED_WOOD);
 
             getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                     .add(ModBlocks.CHARGED_DIRT)
@@ -139,6 +144,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
             getOrCreateTagBuilder(BlockTags.DRAGON_IMMUNE)
                     .addTag(ModBlockTags.REINFORCED_DREADSTONE);
+
+            getOrCreateTagBuilder(ModBlockTags.CORRUPTION)
+                    .add(ModBlocks.CORRUPTION_BLOCK)
+                    .add(ModBlocks.CORRUPTED_DIRT)
+                    .add(ModBlocks.CORRUPTED_STONE)
+                    .add(ModBlocks.CORRUPTINITE_ORE);
 
         }
     }

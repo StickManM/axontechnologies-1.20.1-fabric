@@ -1,4 +1,4 @@
-package net.stickmanm.axontechnologies.effect;
+package net.stickmanm.axontechnologies.effect.custom;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
@@ -8,6 +8,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.stickmanm.axontechnologies.effect.ModEffects;
 
 public class CorruptedGlitchsterEffect extends StatusEffect {
     public CorruptedGlitchsterEffect() {

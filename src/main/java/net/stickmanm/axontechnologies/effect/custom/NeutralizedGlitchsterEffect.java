@@ -1,4 +1,4 @@
-package net.stickmanm.axontechnologies.effect;
+package net.stickmanm.axontechnologies.effect.custom;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeModifier;

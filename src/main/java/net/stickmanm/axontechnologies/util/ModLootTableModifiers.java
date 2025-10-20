@@ -36,11 +36,24 @@ public class ModLootTableModifiers {
     private static final Identifier END_CITY_ID =
             new Identifier("minecraft", "chests/end_city_treasure");
 
+    private static final Identifier BURIED_TREASURE_ID =
+            new Identifier("minecraft", "chests/buried_treasure");
+
 
 
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
 
+
+            if(DESERT_TEMPLE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.05f)) // Drops 100% of the time
+                        .with(ItemEntry.builder(ModBlocks.THUNDERED_SAPLING.asItem()))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+
+                tableBuilder.pool(poolBuilder.build());
+            }
 
             if(DESERT_TEMPLE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
@@ -86,7 +99,7 @@ public class ModLootTableModifiers {
             if(END_CITY_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.001f)) // Drops 100% of the time
+                        .conditionally(RandomChanceLootCondition.builder(0.01f)) // Drops 100% of the time
                         .with(ItemEntry.builder(ModItems.QUATTUORDECUPLE_COMPRESSED_STICK))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
 
@@ -98,6 +111,34 @@ public class ModLootTableModifiers {
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.15f)) // Drops 100% of the time
                         .with(ItemEntry.builder(ModItems.QUINTUPLE_COMPRESSED_STICK))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if(BURIED_TREASURE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.15f)) // Drops 100% of the time
+                        .with(ItemEntry.builder(ModItems.QUINTUPLE_COMPRESSED_STICK))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(BURIED_TREASURE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.001f)) // Drops 100% of the time
+                        .with(ItemEntry.builder(ModItems.QUATTUORDECUPLE_COMPRESSED_STICK))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(BURIED_TREASURE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.1f)) // Drops 100% of the time
+                        .with(ItemEntry.builder(ModBlocks.THUNDERED_SAPLING.asItem()))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
 
                 tableBuilder.pool(poolBuilder.build());
@@ -132,6 +173,7 @@ public class ModLootTableModifiers {
                 entries.add(ItemEntry.builder(ModBlocks.THUNDERED_SAPLING).build());
                 entries.add(ItemEntry.builder(ModItems.QUADRUPLE_COMPRESSED_STICK).build());
                 entries.add(ItemEntry.builder(ModItems.QUINTUPLE_COMPRESSED_STICK).build());
+                entries.add(ItemEntry.builder(ModItems.QUATTUORDECUPLE_COMPRESSED_STICK).build());
 
                 LootPool.Builder pool = LootPool.builder().with(entries);
                 return LootTable.builder().pool(pool).build();

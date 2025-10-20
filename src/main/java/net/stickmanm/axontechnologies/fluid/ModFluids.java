@@ -9,9 +9,12 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.stickmanm.axontechnologies.AxonTechnologies;
-import net.stickmanm.axontechnologies.block.GXFluidBlock;
-import net.stickmanm.axontechnologies.block.LiquidCorruptionFluidBlock;
-import net.stickmanm.axontechnologies.block.LiquidThunderFluidBlock;
+import net.stickmanm.axontechnologies.block.custom.GXFluidBlock;
+import net.stickmanm.axontechnologies.block.custom.LiquidCorruptionFluidBlock;
+import net.stickmanm.axontechnologies.block.custom.LiquidThunderFluidBlock;
+import net.stickmanm.axontechnologies.fluid.custom.GXFluid;
+import net.stickmanm.axontechnologies.fluid.custom.LiquidCorruptionFluid;
+import net.stickmanm.axontechnologies.fluid.custom.LiquidThunderFluid;
 
 public class ModFluids {
     public static FlowableFluid STILL_LIQUID_THUNDER;

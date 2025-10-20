@@ -25,6 +25,8 @@ public class ModBlockTags {
 
     public static final TagKey<Block> REINFORCED_DREADSTONE = TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "reinforced_dreadstone"));
 
+    public static final TagKey<Block> CORRUPTION = TagKey.of(RegistryKeys.BLOCK, new Identifier(AxonTechnologies.MOD_ID, "reinforced_dreadstone"));
+
 
 
 

@@ -1,20 +1,15 @@
-package net.stickmanm.axontechnologies.block;
+package net.stickmanm.axontechnologies.block.custom;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import net.stickmanm.axontechnologies.effect.ModEffects;
-import net.stickmanm.axontechnologies.entity.ModEntities;
-import net.stickmanm.axontechnologies.entity.custom.RedEssenceZombieEntity;
-import org.apache.logging.log4j.core.pattern.AbstractStyleNameConverter;
 
 import java.util.Random;
 

@@ -5,6 +5,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.stickmanm.axontechnologies.AxonTechnologies;
+import net.stickmanm.axontechnologies.effect.custom.*;
 
 public class ModEffects {
 

@@ -1,24 +1,17 @@
 package net.stickmanm.axontechnologies.item.custom;
 
-import com.google.common.collect.ImmutableMap;
 import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.world.World;
-import net.stickmanm.axontechnologies.AxonTechnologies;
-import net.stickmanm.axontechnologies.effect.GlitchsterEffect;
 import net.stickmanm.axontechnologies.effect.ModEffects;
-import net.stickmanm.axontechnologies.item.ModArmorMaterials;
 import net.stickmanm.axontechnologies.item.ModItems;
 import net.stickmanm.axontechnologies.item.client.ThunderaniumArmorRenderer;
 import software.bernie.geckolib.animatable.GeoItem;
@@ -28,7 +21,6 @@ import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInst
 import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 

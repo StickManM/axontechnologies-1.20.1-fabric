@@ -11,12 +11,10 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 import net.stickmanm.axontechnologies.AxonTechnologies;
 import net.stickmanm.axontechnologies.block.ModBlocks;
-import net.stickmanm.axontechnologies.entity.custom.DarkEssenceZombieEntity;
-import net.stickmanm.axontechnologies.entity.custom.GeneticallyModifiedRedEssenceZombieEntity;
-import net.stickmanm.axontechnologies.entity.custom.LostMinerEntity;
-import net.stickmanm.axontechnologies.entity.custom.RedEssenceZombieEntity;
+import net.stickmanm.axontechnologies.entity.custom.*;
 
 public class ModEntities {
 
@@ -53,6 +51,24 @@ public class ModEntities {
                     .specificSpawnBlocks(ModBlocks.THUNDERED_STONE)
                     .trackRangeChunks(64)
                     .dimensions(EntityDimensions.fixed(0.6f,2f)).build());
+
+
+    /*public static final EntityType<ThunderaniumTntEntity> THUNDERANIUM_TNT_ENTITY_ENTITY_TYPE = Registry.register(
+                    Registries.ENTITY_TYPE, new Identifier(AxonTechnologies.MOD_ID, "thunderanium_tnt_entity"),
+                    FabricEntityTypeBuilder.create(SpawnGroup.MISC, ThunderaniumTntEntity::new)
+                            .dimensions(EntityDimensions.fixed(0.6f,2f))
+                            .build());*/
+    public static final EntityType<ThunderaniumTntEntity> THUNDERANIUM_TNT_ENTITY_ENTITY_TYPE =
+            Registry.register(
+                    Registries.ENTITY_TYPE,
+                    new Identifier(AxonTechnologies.MOD_ID, "thunderanium_tnt_entity"),
+
+                    // 🟢 The builder creates an EntityType that links to the two-arg constructor.
+                    // Explicitly defining the generic types here can sometimes resolve IDE issues.
+                    EntityType.Builder.<ThunderaniumTntEntity>create(ThunderaniumTntEntity::new, SpawnGroup.MISC)
+                            .setDimensions(0.98F, 0.98F)
+                            .maxTrackingRange(10)
+                            .build("thunderanium_tnt_entity"));
 
     public static void registerModEntities(){
         FabricDefaultAttributeRegistry.register(ModEntities.RED_ESSENCE_ZOMBIE, RedEssenceZombieEntity.setAttributes());

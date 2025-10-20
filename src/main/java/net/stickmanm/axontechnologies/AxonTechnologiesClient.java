@@ -9,6 +9,8 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.EntityRenderer;
+import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.TntEntityRenderer;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.util.Identifier;
 import net.stickmanm.axontechnologies.block.ModBlocks;
@@ -63,5 +65,10 @@ public class AxonTechnologiesClient implements ClientModInitializer {
                 SimpleFluidRenderHandler.WATER_STILL, SimpleFluidRenderHandler.WATER_FLOWING, SimpleFluidRenderHandler.WATER_OVERLAY,
                 0x519b66));
 
+
+        EntityRendererRegistry.register(
+                ModEntities.THUNDERANIUM_TNT_ENTITY_ENTITY_TYPE,
+                (EntityRendererFactory.Context context) -> new TntEntityRenderer(context)
+        );
     }
 }

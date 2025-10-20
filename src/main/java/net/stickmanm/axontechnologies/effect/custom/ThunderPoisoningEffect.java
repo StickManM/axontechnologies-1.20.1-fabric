@@ -1,16 +1,10 @@
-package net.stickmanm.axontechnologies.effect;
+package net.stickmanm.axontechnologies.effect.custom;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.stat.Stat;
-import net.stickmanm.axontechnologies.world.dimension.ModDimensions;
 
 public class ThunderPoisoningEffect extends StatusEffect {
     public ThunderPoisoningEffect() {

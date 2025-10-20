@@ -1,11 +1,7 @@
-package net.stickmanm.axontechnologies.fluid;
+package net.stickmanm.axontechnologies.fluid.custom;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
@@ -18,7 +14,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.*;
 import net.stickmanm.axontechnologies.block.ModBlocks;
-import net.stickmanm.axontechnologies.effect.ModEffects;
+import net.stickmanm.axontechnologies.fluid.ModFluids;
 import net.stickmanm.axontechnologies.item.ModItems;
 
 public abstract class LiquidThunderFluid extends FlowableFluid {

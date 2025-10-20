@@ -1,4 +1,4 @@
-package net.stickmanm.axontechnologies.effect;
+package net.stickmanm.axontechnologies.effect.custom;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
@@ -8,9 +8,10 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.stickmanm.axontechnologies.effect.ModEffects;
 
-public class GlitchsterIIEffect extends StatusEffect {
-    public GlitchsterIIEffect() {
+public class GlitchsterEffect extends StatusEffect {
+    public GlitchsterEffect() {
         super(StatusEffectCategory.BENEFICIAL, // whether beneficial or harmful for entities
                 0x98D982); // color in RGB
     }
@@ -34,16 +35,11 @@ public class GlitchsterIIEffect extends StatusEffect {
                     entity.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 10, 1, false, false, false));
 
                 }
-                addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 8.5f, EntityAttributeModifier.Operation.ADDITION)
-                        .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "91AEAA56-376B-4498-935B-2F7F68070635", 6.5f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
-                        .addAttributeModifier(EntityAttributes.GENERIC_MAX_HEALTH, "91AEAA56-376B-4498-935B-2F7F68070635", 20f, EntityAttributeModifier.Operation.ADDITION)
-                        .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED, "AF8B6E3F-3328-4C0A-AA36-5BA2BB9DBEF3", 25f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
-                        .addAttributeModifier(EntityAttributes.GENERIC_LUCK, "AF8B6E3F-3328-4C0A-AA36-5BA2BB9DBEF3", 20f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 10, 2, false, false, false));
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 10, 1, false, false, false));
-                if (entity.getHealth() < entity.getMaxHealth()) {
-                    entity.heal(0.1F);
-                }
+                addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 3.0f, EntityAttributeModifier.Operation.ADDITION)
+                        .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "91AEAA56-376B-4498-935B-2F7F68070635", 3.0f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
+                        .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED, "AF8B6E3F-3328-4C0A-AA36-5BA2BB9DBEF3", 15f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 10, 1, false, false, false));
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 10, 0, false, false, false));
             }
         }
 

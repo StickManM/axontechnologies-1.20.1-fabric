@@ -1,22 +1,18 @@
-package net.stickmanm.axontechnologies.fluid;
+package net.stickmanm.axontechnologies.fluid.custom;
 
-import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.FluidBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Item;
-import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.*;
-import net.stickmanm.axontechnologies.block.ModBlocks;
+import net.stickmanm.axontechnologies.fluid.ModFluids;
 import net.stickmanm.axontechnologies.item.ModItems;
 
 public abstract class GXFluid extends FlowableFluid {

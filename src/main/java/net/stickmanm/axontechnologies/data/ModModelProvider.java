@@ -80,6 +80,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CORRUPTINITE_ORE);
 
 
+        blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.THUNDERANIUM_TNT);
+
 
 
         //SPAWN EGGS

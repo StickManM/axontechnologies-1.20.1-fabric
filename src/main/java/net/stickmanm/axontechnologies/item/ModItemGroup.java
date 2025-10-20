@@ -206,6 +206,9 @@ public class ModItemGroup {
                         entries.add(ModBlocks.FAKESTONE);
                         entries.add(ModBlocks.FAKESLATE);
 
+
+                        entries.add(ModBlocks.THUNDERANIUM_TNT);
+
                         entries.add(ModBlocks.CHARGED_DIRT);
                         entries.add(ModBlocks.THUNDERED_STONE);
                         entries.add(ModBlocks.THUNDERANIUM_ORE);

@@ -1,4 +1,4 @@
-package net.stickmanm.axontechnologies.fluid;
+package net.stickmanm.axontechnologies.fluid.custom;
 
 import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.block.Block;
@@ -17,6 +17,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.*;
 import net.stickmanm.axontechnologies.block.ModBlocks;
+import net.stickmanm.axontechnologies.fluid.ModFluids;
 import net.stickmanm.axontechnologies.item.ModItems;
 
 public abstract class LiquidCorruptionFluid extends FlowableFluid {
