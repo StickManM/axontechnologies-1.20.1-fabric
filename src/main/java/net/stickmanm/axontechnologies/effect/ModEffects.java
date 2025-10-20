@@ -24,6 +24,8 @@ public class ModEffects {
     public static final StatusEffect CORRUPTED_GLITCHSTERIII = new CorruptedGlitchsterIIIEffect();
     public static final StatusEffect ANTI_CORRUPTED_GLITCHSTER = new AntiCorruptedGlitchsterEffect();
 
+    public static final StatusEffect UNKILLABLE = new UnkillableEffect();
+
     public static void registerModEffects() {
         Registry.register(Registries.STATUS_EFFECT, new Identifier(AxonTechnologies.MOD_ID, "glitchster"), GLITCHSTER);
         Registry.register(Registries.STATUS_EFFECT, new Identifier(AxonTechnologies.MOD_ID, "glitchster2"), GLITCHSTERII);
@@ -39,6 +41,7 @@ public class ModEffects {
         Registry.register(Registries.STATUS_EFFECT, new Identifier(AxonTechnologies.MOD_ID, "thunder_poisoning"), THUNDER_POISONING);
         Registry.register(Registries.STATUS_EFFECT, new Identifier(AxonTechnologies.MOD_ID, "antiglitchster"), ANTIGLITCHSTER);
         Registry.register(Registries.STATUS_EFFECT, new Identifier(AxonTechnologies.MOD_ID, "anti_corrupted_glitchster"), ANTI_CORRUPTED_GLITCHSTER);
+        Registry.register(Registries.STATUS_EFFECT, new Identifier(AxonTechnologies.MOD_ID, "unkillable"), UNKILLABLE);
 
         AxonTechnologies.LOGGER.info("Registering ModEffects for " + AxonTechnologies.MOD_ID);
     }
