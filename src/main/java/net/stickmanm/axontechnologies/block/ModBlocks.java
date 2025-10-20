@@ -147,7 +147,7 @@ public class ModBlocks {
                     UniformIntProvider.create(15, 25)));
 
     public static final Block RENDERIUM_ORE = registerBlock("renderium_ore",
-            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(ModBlocks.THUNDERED_STONE).strength(2.5f).requiresTool().luminance(5),
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(ModBlocks.THUNDERED_STONE).strength(2.5f).requiresTool().luminance(10),
                     UniformIntProvider.create(15, 25)));
 
     //Corruptionlands
@@ -165,7 +165,7 @@ public class ModBlocks {
                     UniformIntProvider.create(20, 27)));
 
     public static final Block DENDERIUM_ORE = registerBlock("denderium_ore",
-            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(ModBlocks.CORRUPTED_STONE).strength(2.5f).requiresTool().luminance(5),
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(ModBlocks.CORRUPTED_STONE).strength(2.5f).requiresTool().luminance(10),
                     UniformIntProvider.create(15, 25)));
 
     //Dimension Core Ores
