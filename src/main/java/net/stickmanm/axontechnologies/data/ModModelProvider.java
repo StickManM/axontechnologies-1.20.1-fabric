@@ -2,10 +2,7 @@ package net.stickmanm.axontechnologies.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.ModelIds;
-import net.minecraft.data.client.Models;
+import net.minecraft.data.client.*;
 import net.stickmanm.axontechnologies.block.ModBlocks;
 import net.stickmanm.axontechnologies.item.ModItems;
 
@@ -80,7 +77,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CORRUPTINITE_ORE);
 
 
-        blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.THUNDERANIUM_TNT);
+        blockStateModelGenerator.registerSingleton(ModBlocks.THUNDERANIUM_TNT, TexturedModel.END_FOR_TOP_CUBE_COLUMN);
 
 
 
