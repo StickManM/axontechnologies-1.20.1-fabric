@@ -47,6 +47,8 @@ public class CorruptionBlock extends Block {
             world.setBlockState(targetPos, ModBlocks.CORRUPTINITE_ORE.getDefaultState(), 3);
         } else if (targetState.getBlock().equals(ModFluids.LIQUID_THUNDER_BLOCK)) {
             world.setBlockState(targetPos, ModFluids.LIQUID_CORRUPTION_BLOCK.getDefaultState(), 3);
+        } else if (targetState.getBlock().equals(ModBlocks.RENDERIUM_ORE)) {
+            world.setBlockState(targetPos, ModBlocks.DENDERIUM_ORE.getDefaultState(), 3);
         }
         else if (!targetState.isIn(ModBlockTags.CORRUPTION)){
             // Place the custom block at the target position

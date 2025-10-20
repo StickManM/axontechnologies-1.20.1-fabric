@@ -149,7 +149,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                     .add(ModBlocks.CORRUPTION_BLOCK)
                     .add(ModBlocks.CORRUPTED_DIRT)
                     .add(ModBlocks.CORRUPTED_STONE)
-                    .add(ModBlocks.CORRUPTINITE_ORE);
+                    .add(ModBlocks.CORRUPTINITE_ORE)
+                    .add(ModBlocks.DENDERIUM_ORE)
+                    .add(ModBlocks.CLDC_ORE);
 
         }
     }
