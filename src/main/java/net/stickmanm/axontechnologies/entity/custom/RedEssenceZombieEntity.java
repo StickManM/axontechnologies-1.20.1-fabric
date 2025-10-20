@@ -7,6 +7,7 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.MobEntity;
@@ -15,11 +16,18 @@ import net.minecraft.entity.mob.WardenEntity;
 import net.minecraft.entity.mob.ZombifiedPiglinEntity;
 import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
+import net.stickmanm.axontechnologies.AxonTechnologies;
+import net.stickmanm.axontechnologies.effect.ModEffects;
 import net.stickmanm.axontechnologies.entity.ModEntities;
+import net.stickmanm.axontechnologies.fluid.ModFluids;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
@@ -76,28 +84,6 @@ public class RedEssenceZombieEntity extends PathAwareEntity implements GeoEntity
     }
 
 
-    public void convertTo(EntityType<? extends RedEssenceZombieEntity> entityType) {
-        RedEssenceZombieEntity zombieEntity = this.convertTo(entityType, true);
-        if (zombieEntity != null) {
-            zombieEntity.applyAttributeModifiers(zombieEntity.getWorld().getLocalDifficulty(zombieEntity.getBlockPos()).getClampedLocalDifficulty());
-        }
-    }
-
-
-    protected void applyAttributeModifiers(float chanceMultiplier) {
-        this.createMobAttributes();
-        this.getAttributeInstance(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE).addPersistentModifier(new EntityAttributeModifier("Random spawn bonus", this.random.nextDouble() * (double)0.05f, EntityAttributeModifier.Operation.ADDITION));
-        double d = this.random.nextDouble() * 1.5 * (double)chanceMultiplier;
-        if (d > 1.0) {
-            this.getAttributeInstance(EntityAttributes.GENERIC_FOLLOW_RANGE).addPersistentModifier(new EntityAttributeModifier("Random zombie-spawn bonus", d, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
-        }
-        if (this.random.nextFloat() < chanceMultiplier * 0.05f) {
-            this.getAttributeInstance(EntityAttributes.ZOMBIE_SPAWN_REINFORCEMENTS).addPersistentModifier(new EntityAttributeModifier("Leader zombie bonus", this.random.nextDouble() * 0.25 + 0.5, EntityAttributeModifier.Operation.ADDITION));
-            this.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).addPersistentModifier(new EntityAttributeModifier("Leader zombie bonus", this.random.nextDouble() * 3.0 + 1.0, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
-        }
-    }
-
-
 
     @Nullable
 
@@ -119,6 +105,60 @@ public class RedEssenceZombieEntity extends PathAwareEntity implements GeoEntity
 
         tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.modified_RedEssenceZombie.idle", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
+    }
+
+    public boolean damage(DamageSource source, float amount) {
+        // 1. Call the super method first to process the damage normally
+        boolean damaged = super.damage(source, amount);
+
+        // 2. Only apply the effect if the entity was successfully damaged
+        if (damaged) {
+            this.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 10, 255,false, false, false));
+        }
+
+        return damaged;
+    }
+
+    public void tick() {
+        super.tick();
+
+        // Check for transformation logic every tick
+
+        if (this.hasStatusEffect(ModEffects.GLITCHSTERX)) {
+            convertEntity();
+        }
+    }
+
+
+    private void convertEntity() {
+        // This conversion should only happen on the server side
+        if (!(this.getWorld() instanceof ServerWorld serverWorld)) {
+            return;
+        }
+
+        // 1. Get the target entity type (e.g., a vanilla Zombie)
+        EntityType<GeneticallyModifiedRedEssenceZombieEntity> targetType = ModEntities.GENETICALLY_MODIFIED_RED_ESSENCE_ZOMBIE; // Change to your desired entity type
+
+        // 2. Create the new entity at the current location
+        MobEntity newEntity = targetType.create(serverWorld);
+        if (newEntity == null) {
+            return;
+        }
+
+        newEntity.copyPositionAndRotation(this);
+
+        // Optional: Copy NBT data (inventory, name, health, etc.)
+        NbtCompound nbt = new NbtCompound();
+        this.writeNbt(nbt);
+        newEntity.readNbt(nbt);
+        newEntity.setHealth(this.getHealth());
+
+        // 3. Remove the original entity and add the new one
+        this.discard(); // Removes the custom entity from the world
+        serverWorld.spawnEntityAndPassengers(newEntity);
+
+        // Optional: Add visual/sound effects for the transformation
+        // serverWorld.syncWorldEvent(WorldEvents.ZOMBIE_VILLAGER_CURES, this.getBlockPos(), 0);
     }
 
     @Override

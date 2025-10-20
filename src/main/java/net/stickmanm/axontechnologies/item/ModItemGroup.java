@@ -135,6 +135,7 @@ public class ModItemGroup {
                         entries.add(ModItems.VANILLA_HOE);
                         entries.add(ModItems.ULTIMATE_HOE_TROPHY);
                         entries.add(ModItems.RAZZOR);
+                        entries.add(ModItems.RAZZORIUM_MINER);
                         entries.add(ModItems.TICKLE_TRAVIS_TICKLER);
 
                         //COMPRESSED STICKS

@@ -392,6 +392,16 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(ModItems.RAZZOR))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.RAZZOR)));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RAZZORIUM_MINER)
+                .pattern("RRR")
+                .pattern("RSR")
+                .pattern("RSR")
+                .input('R', ModItems.RAZZORIUM)
+                .input('S', ModItems.QUATTUORDECUPLE_COMPRESSED_STICK)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.RAZZORIUM),
+                        FabricRecipeProvider.conditionsFromItem(ModItems.RAZZORIUM_MINER))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.RAZZORIUM_MINER)));
+
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TICKLE_TRAVIS_TICKLER)
                 .input(ModItems.RAZZOR)

@@ -1,10 +1,12 @@
 package net.stickmanm.axontechnologies.entity.custom;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.*;
@@ -35,14 +37,14 @@ public class GeneticallyModifiedRedEssenceZombieEntity extends PathAwareEntity i
 
     public static DefaultAttributeContainer.Builder setAttributes() {
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 0.4f)
-                .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 1f)
+                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1f)
+                .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 2f)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 128)
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 155.0D)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 300.0f)
-                .add(EntityAttributes.GENERIC_ATTACK_SPEED, 15.0f)
-                .add(EntityAttributes.GENERIC_LUCK, 75.5f)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1.5f);
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 300f)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 110f)
+                .add(EntityAttributes.GENERIC_ATTACK_SPEED, 1000f)
+                .add(EntityAttributes.GENERIC_LUCK, 255f)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1.75f);
 
 
     }
@@ -81,10 +83,28 @@ public class GeneticallyModifiedRedEssenceZombieEntity extends PathAwareEntity i
 
     }
 
-    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        target.addStatusEffect(new StatusEffectInstance(ModEffects.THUNDER_POISONING, 3600, 3));
+    public boolean damage(DamageSource source, float amount) {
+        // 1. Call the super method first to process the damage normally
+        boolean damaged = super.damage(source, amount);
 
-        return true;
+        // 2. Only apply the effect if the entity was successfully damaged
+        if (damaged) {
+            this.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 10, 255,false, false, false));
+        }
+
+        return damaged;
+    }
+
+    public boolean tryAttack(Entity target) {
+        if (!super.tryAttack(target)) {
+            return false;
+        } else {
+            if (target instanceof LivingEntity) {
+                ((LivingEntity)target).addStatusEffect(new StatusEffectInstance(ModEffects.ANTI_CORRUPTED_GLITCHSTER, 1200), this);
+            }
+
+            return true;
+        }
     }
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {

@@ -43,7 +43,7 @@ public class LostMinerEntity extends PathAwareEntity implements GeoEntity {
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 0.2f)
                 .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 0.4f)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 15)
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 32.0D)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 40.0D)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 15f)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED, 5.0f)
                 .add(EntityAttributes.GENERIC_LUCK, 1.5f)

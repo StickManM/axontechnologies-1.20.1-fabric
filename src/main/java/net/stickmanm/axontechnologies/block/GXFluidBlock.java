@@ -32,7 +32,7 @@ public class GXFluidBlock extends FluidBlock {
                 LivingEntity livingEntity = (LivingEntity)entity;
                 if (!livingEntity.isInvulnerableTo(world.getDamageSources().lightningBolt())) {
                      if(overDose == 1){
-                         livingEntity.setHealth(0.000000000000000000000000000000000000000000001f);
+                         livingEntity.setHealth(Float.MIN_EXPONENT);
                          livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.OVERDOSE, -1, 255, false, true));
                          overDose = 0;
                      } else if (!livingEntity.hasStatusEffect(ModEffects.OVERDOSE)) {
@@ -41,12 +41,6 @@ public class GXFluidBlock extends FluidBlock {
                          livingEntity.removeStatusEffect(ModEffects.ANTI_CORRUPTED_GLITCHSTER);
                          overDose = random.nextInt(200);
                      }
-                }
-                if (livingEntity.getType() == ModEntities.RED_ESSENCE_ZOMBIE) {
-                    ((RedEssenceZombieEntity) livingEntity).convertTo((EntityType) ModEntities.GENETICALLY_MODIFIED_RED_ESSENCE_ZOMBIE);
-
-
-
                 }
             }
 

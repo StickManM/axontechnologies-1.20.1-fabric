@@ -17,7 +17,7 @@ public enum ModToolMaterials implements ToolMaterial {
     DARK_THUNDERANIUM_AXON_ALLOY(10, 0, 50.0f, 25.0f, 115, () -> Ingredient.ofItems(ModItems.DARK_THUNDERANIUM_INGOT)),
     AXON_ALLOY(10, 0, 40.0f, 21.5f, 90, () -> Ingredient.ofItems(ModItems.AXON_ALLOY)),
 
-    RAZZORIUM(2147483647, 0, 1000f, 330282346638528860000000000000000000000f, 2147483647, () -> Ingredient.ofItems(ModItems.RAZZORIUM));
+    RAZZORIUM(Integer.MAX_VALUE, 0, Float.MAX_VALUE, 14, Integer.MAX_VALUE, () -> Ingredient.ofItems(ModItems.RAZZORIUM));
 
     private final int miningLevel;
     private final int itemDurability;

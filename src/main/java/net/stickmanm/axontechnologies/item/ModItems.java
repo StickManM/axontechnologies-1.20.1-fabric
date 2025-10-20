@@ -248,11 +248,15 @@ public class ModItems {
                     new FabricItemSettings()));
 
     public static final Item RAZZOR = registerItem("razzor",
-            new AxonToolItem(ModToolMaterials.RAZZORIUM, 2147483646,100000f,
+            new RazzorSwordItem(ModToolMaterials.RAZZORIUM, Integer.MAX_VALUE,Float.MAX_VALUE,
+                    new FabricItemSettings()));
+
+    public static final Item RAZZORIUM_MINER = registerItem("razzorium_miner",
+            new ModMultiTool(ModToolMaterials.RAZZORIUM, 10, 10f,
                     new FabricItemSettings()));
 
     public static final Item TICKLE_TRAVIS_TICKLER = registerItem("tickle_travis_tickler",
-            new AxonToolItem(ModToolMaterials.RAZZORIUM, 2147483646,100000f,
+            new RazzorSwordItem(ModToolMaterials.RAZZORIUM, Integer.MAX_VALUE, Float.MAX_VALUE,
                     new FabricItemSettings()));
 
 

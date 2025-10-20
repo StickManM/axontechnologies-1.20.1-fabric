@@ -104,13 +104,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                     .add(ModBlocks.DENDERIUM_ORE)
                     .add(ModBlocks.CORRUPTION_PORTAL_FRAME)
                     .add(ModBlocks.CORRUPTION_BLOCK)
-                    .add(ModBlocks.REINFORCED_DREADSTONE)
-                    .add(ModBlocks.REINFORCED_DREADSTONE_DOOR)
-                    .add(ModBlocks.REINFORCED_DREADSTONE_TRAPDOOR)
-                    .add(ModBlocks.REINFORCED_DREADSTONE_STAIRS)
-                    .add(ModBlocks.REINFORCED_DREADSTONE_SLAB)
-                    .add(ModBlocks.REINFORCED_DREADSTONE_WALL)
-                    .add(ModBlocks.REINFORCED_DREADSTONE_GLASS);
+                    .addTag(ModBlockTags.REINFORCED_DREADSTONE);
 
             getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_10")))
                     .add(ModBlocks.TLDC_ORE)

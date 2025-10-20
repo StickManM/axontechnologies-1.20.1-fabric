@@ -6,6 +6,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.MobEntity;
@@ -46,7 +47,7 @@ public class DarkEssenceZombieEntity extends PathAwareEntity implements GeoEntit
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 45.0f)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED, 5.0f)
                 .add(EntityAttributes.GENERIC_LUCK, 50.5f)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1f);
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1.01f);
 
 
     }
@@ -93,6 +94,18 @@ public class DarkEssenceZombieEntity extends PathAwareEntity implements GeoEntit
 
             return true;
         }
+    }
+
+    public boolean damage(DamageSource source, float amount) {
+        // 1. Call the super method first to process the damage normally
+        boolean damaged = super.damage(source, amount);
+
+        // 2. Only apply the effect if the entity was successfully damaged
+        if (damaged) {
+            this.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 15, 255,false, false, false));
+        }
+
+        return damaged;
     }
 
     @Override
