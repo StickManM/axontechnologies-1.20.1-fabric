@@ -9,6 +9,16 @@
     "water_fog_color": 7865862
   },
   "spawners": {
+
+    "creature": [
+      {
+        "type": "axontechnologies:dark_essence_zombie",
+        "weight": 100,
+        "minCount": 5,
+        "maxCount": 20
+      }
+
+    ],
     "monster": [
       {
         "type": "axontechnologies:dark_essence_zombie",
@@ -16,6 +26,7 @@
         "minCount": 5,
         "maxCount": 20
       }
+
     ]
   },
   "spawn_costs": {},

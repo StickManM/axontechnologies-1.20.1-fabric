@@ -278,6 +278,51 @@ public class ModAdvancements implements Consumer<Consumer<Advancement>> {
                 .criterion("got_ultimate_hoe_trophy", InventoryChangedCriterion.Conditions.items(ModItems.ULTIMATE_HOE_TROPHY))
                 .build(consumer, AxonTechnologies.MOD_ID + "/got_ultimate_hoe_trophy");
 
+        Advancement getRazzorium = Advancement.Builder.create().parent(getAxonAlloy)
+                .display(
+                        ModItems.RAZZORIUM, // The display icon
+                        Text.translatable("advancement.axontechnologies.get_razzorium.title"), // The title
+                        Text.translatable("advancement.axontechnologies.get_razzorium.description"), // The description
+                        null,
+                        AdvancementFrame.CHALLENGE, // Options: TASK, CHALLENGE, GOAL
+                        true, // Show toast top right
+                        true, // Announce to chat
+                        false // Hidden in the advancement tab
+                )
+                // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
+                .criterion("got_razzorium", InventoryChangedCriterion.Conditions.items(ModItems.RAZZORIUM))
+                .build(consumer, AxonTechnologies.MOD_ID + "/got_razzorium");
+
+        Advancement getRazzor = Advancement.Builder.create().parent(getAxonAlloy)
+                .display(
+                        ModItems.RAZZORIUM, // The display icon
+                        Text.translatable("advancement.axontechnologies.get_razzor.title"), // The title
+                        Text.translatable("advancement.axontechnologies.get_razzor.description"), // The description
+                        null,
+                        AdvancementFrame.CHALLENGE, // Options: TASK, CHALLENGE, GOAL
+                        true, // Show toast top right
+                        true, // Announce to chat
+                        false // Hidden in the advancement tab
+                )
+                // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
+                .criterion("got_razzor", InventoryChangedCriterion.Conditions.items(ModItems.RAZZOR))
+                .build(consumer, AxonTechnologies.MOD_ID + "/got_razzor");
+
+        Advancement getRazzoriumMiner = Advancement.Builder.create().parent(getAxonAlloy)
+                .display(
+                        ModItems.RAZZORIUM_MINER, // The display icon
+                        Text.translatable("advancement.axontechnologies.get_razzorium_miner.title"), // The title
+                        Text.translatable("advancement.axontechnologies.get_razzorium_miner.description"), // The description
+                        null,
+                        AdvancementFrame.CHALLENGE, // Options: TASK, CHALLENGE, GOAL
+                        true, // Show toast top right
+                        true, // Announce to chat
+                        false // Hidden in the advancement tab
+                )
+                // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
+                .criterion("got_razzorium_miner", InventoryChangedCriterion.Conditions.items(ModItems.RAZZORIUM_MINER))
+                .build(consumer, AxonTechnologies.MOD_ID + "/got_razzorium_miner");
+
 
 
 

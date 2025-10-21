@@ -1,5 +1,6 @@
 package net.stickmanm.axontechnologies.entity.custom;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.brain.sensor.HurtBySensor;
@@ -21,10 +22,13 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
 import net.stickmanm.axontechnologies.AxonTechnologies;
+import net.stickmanm.axontechnologies.block.ModBlocks;
 import net.stickmanm.axontechnologies.effect.ModEffects;
 import net.stickmanm.axontechnologies.entity.ModEntities;
 import net.stickmanm.axontechnologies.fluid.ModFluids;
@@ -123,10 +127,42 @@ public class RedEssenceZombieEntity extends PathAwareEntity implements GeoEntity
         super.tick();
 
         // Check for transformation logic every tick
+        BlockPos currentPos = this.getBlockPos();
 
         if (this.hasStatusEffect(ModEffects.GLITCHSTERX)) {
             convertEntity();
+
         }
+
+        for (Direction direction : Direction.Type.HORIZONTAL) {
+            BlockPos sidePos = currentPos.offset(direction);
+
+            // Note: We check the block at the entity's Y-level, assuming the side touch happens here.
+            if (this.tryTransform(sidePos)) {
+                return;
+            }
+        }
+
+        BlockPos upperPos = currentPos.up();
+        for (Direction direction : Direction.Type.HORIZONTAL) {
+            if (this.tryTransform(upperPos.offset(direction))) {
+                return;
+            }
+        }
+    }
+
+    private boolean tryTransform(BlockPos pos) {
+        BlockState state = this.getWorld().getBlockState(pos);
+
+        // Check if the block at the given position is the trigger block (Cobblestone)
+        if (state.isOf(ModBlocks.CORRUPTION_BLOCK)) {
+
+            corruptEntity();
+            // Tell the tick loop that the transformation happened
+            return true;
+        }
+
+        return false;
     }
 
 
@@ -138,6 +174,37 @@ public class RedEssenceZombieEntity extends PathAwareEntity implements GeoEntity
 
         // 1. Get the target entity type (e.g., a vanilla Zombie)
         EntityType<GeneticallyModifiedRedEssenceZombieEntity> targetType = ModEntities.GENETICALLY_MODIFIED_RED_ESSENCE_ZOMBIE; // Change to your desired entity type
+
+        // 2. Create the new entity at the current location
+        MobEntity newEntity = targetType.create(serverWorld);
+        if (newEntity == null) {
+            return;
+        }
+
+        newEntity.copyPositionAndRotation(this);
+
+        // Optional: Copy NBT data (inventory, name, health, etc.)
+        NbtCompound nbt = new NbtCompound();
+        this.writeNbt(nbt);
+        newEntity.readNbt(nbt);
+        newEntity.setHealth(this.getHealth());
+
+        // 3. Remove the original entity and add the new one
+        this.discard(); // Removes the custom entity from the world
+        serverWorld.spawnEntityAndPassengers(newEntity);
+
+        // Optional: Add visual/sound effects for the transformation
+        // serverWorld.syncWorldEvent(WorldEvents.ZOMBIE_VILLAGER_CURES, this.getBlockPos(), 0);
+    }
+
+    private void corruptEntity() {
+        // This conversion should only happen on the server side
+        if (!(this.getWorld() instanceof ServerWorld serverWorld)) {
+            return;
+        }
+
+        // 1. Get the target entity type (e.g., a vanilla Zombie)
+        EntityType<DarkEssenceZombieEntity> targetType = ModEntities.DARK_ESSENCE_ZOMBIE; // Change to your desired entity type
 
         // 2. Create the new entity at the current location
         MobEntity newEntity = targetType.create(serverWorld);

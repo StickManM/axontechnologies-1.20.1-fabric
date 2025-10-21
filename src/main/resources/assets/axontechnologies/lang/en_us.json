@@ -289,7 +289,7 @@
   "advancement.axontechnologies.get_corruptinite_axon_alloy_armor.title": "The Darkness Evolves!",
   "advancement.axontechnologies.get_corruptinite_axon_alloy_armor.description": "Get a full set of Axon Alloy Armor Type C.",
 
-  "advancement.axontechnologies.get_axon_alloy_armor.title": "You Can't Use Both of Them",
+  "advancement.axontechnologies.get_axon_alloy_armor.title": "You Can't Use Both of Them!",
   "advancement.axontechnologies.get_axon_alloy_armor.description": "Get a full set of Axon Alloy Armor Type A.",
 
   "advancement.axontechnologies.get_ultimate_hoe_trophy.title": "Seriously?",
@@ -300,6 +300,9 @@
 
   "advancement.axontechnologies.get_razzor.title": "The Omega Weapon",
   "advancement.axontechnologies.get_razzor.description": "Create Razzor.",
+
+  "advancement.axontechnologies.get_razzorium_miner.title": "World Eater",
+  "advancement.axontechnologies.get_razzorium_miner.description": "Create the Razzorium Miner.",
 
 
   "category.axontechnologies.keybinds": "Axon T.e.c.h.n.o.l.o.g.i.e.s. (WIP)",
