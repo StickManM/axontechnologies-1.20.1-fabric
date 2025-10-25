@@ -11,7 +11,9 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.stickmanm.axontechnologies.AxonTechnologies;
+import net.stickmanm.axontechnologies.block.custom.AxonAlloyTntBlock;
 import net.stickmanm.axontechnologies.block.custom.CorruptionBlock;
+import net.stickmanm.axontechnologies.block.custom.RedThunderaniumTntBlock;
 import net.stickmanm.axontechnologies.block.custom.ThunderaniumTntBlock;
 import net.stickmanm.axontechnologies.world.tree.ThunderedSaplingGenerator;
 
@@ -122,8 +124,16 @@ public class ModBlocks {
     public static final Block OCTUPLE_COMPRESSED_COBBLESTONE = registerBlock("octuple_compressed_cobblestone",
             new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE).strength(2.1f).requiresTool()));
 
+    //TNT
     public static final Block THUNDERANIUM_TNT = registerBlock("thunderanium_tnt",
             new ThunderaniumTntBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
+    public static final Block RED_THUNDERANIUM_TNT = registerBlock("red_thunderanium_tnt",
+            new RedThunderaniumTntBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
+    public static final Block AXON_ALLOY_TNT = registerBlock("axon_alloy_tnt",
+            new AxonAlloyTntBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
 
     //Mimic World
     public static final Block FAKESTONE = registerBlock("fakestone",

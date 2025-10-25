@@ -78,6 +78,8 @@ public class ModModelProvider extends FabricModelProvider {
 
 
         blockStateModelGenerator.registerSingleton(ModBlocks.THUNDERANIUM_TNT, TexturedModel.END_FOR_TOP_CUBE_COLUMN);
+        blockStateModelGenerator.registerSingleton(ModBlocks.RED_THUNDERANIUM_TNT, TexturedModel.END_FOR_TOP_CUBE_COLUMN);
+        blockStateModelGenerator.registerSingleton(ModBlocks.AXON_ALLOY_TNT, TexturedModel.END_FOR_TOP_CUBE_COLUMN);
 
 
 

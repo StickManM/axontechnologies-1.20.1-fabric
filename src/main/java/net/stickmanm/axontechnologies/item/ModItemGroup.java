@@ -208,6 +208,8 @@ public class ModItemGroup {
 
 
                         entries.add(ModBlocks.THUNDERANIUM_TNT);
+                        entries.add(ModBlocks.RED_THUNDERANIUM_TNT);
+                        entries.add(ModBlocks.AXON_ALLOY_TNT);
 
                         entries.add(ModBlocks.CHARGED_DIRT);
                         entries.add(ModBlocks.THUNDERED_STONE);

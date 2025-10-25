@@ -11,14 +11,12 @@ import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.TntEntityRenderer;
+import net.minecraft.client.render.entity.TntMinecartEntityRenderer;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.util.Identifier;
 import net.stickmanm.axontechnologies.block.ModBlocks;
 import net.stickmanm.axontechnologies.entity.ModEntities;
-import net.stickmanm.axontechnologies.entity.client.DarkEssenceZombieRenderer;
-import net.stickmanm.axontechnologies.entity.client.GeneticallyModifiedRedEssenceZombieRenderer;
-import net.stickmanm.axontechnologies.entity.client.LostMinerRenderer;
-import net.stickmanm.axontechnologies.entity.client.RedEssenceZombieRenderer;
+import net.stickmanm.axontechnologies.entity.client.*;
 import net.stickmanm.axontechnologies.fluid.ModFluids;
 import org.lwjgl.glfw.GLFW;
 
@@ -43,6 +41,9 @@ public class AxonTechnologiesClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.GENETICALLY_MODIFIED_RED_ESSENCE_ZOMBIE, GeneticallyModifiedRedEssenceZombieRenderer::new);
         EntityRendererRegistry.register(ModEntities.DARK_ESSENCE_ZOMBIE, DarkEssenceZombieRenderer::new);
         EntityRendererRegistry.register(ModEntities.LOST_MINER, LostMinerRenderer::new);
+        EntityRendererRegistry.register(ModEntities.THUNDERANIUM_TNT_ENTITY_TYPE, ThunderaniumTntEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.RED_THUNDERANIUM_TNT_ENTITY_TYPE, RedThunderaniumTntEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.AXON_ALLOY_TNT_ENTITY_TYPE, AxonAlloyTntEntityRenderer::new);
 
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_LIQUID_THUNDER, new SimpleFluidRenderHandler(
                 SimpleFluidRenderHandler.WATER_STILL, SimpleFluidRenderHandler.WATER_FLOWING, SimpleFluidRenderHandler.WATER_OVERLAY,
@@ -65,10 +66,5 @@ public class AxonTechnologiesClient implements ClientModInitializer {
                 SimpleFluidRenderHandler.WATER_STILL, SimpleFluidRenderHandler.WATER_FLOWING, SimpleFluidRenderHandler.WATER_OVERLAY,
                 0x519b66));
 
-
-        EntityRendererRegistry.register(
-                ModEntities.THUNDERANIUM_TNT_ENTITY_ENTITY_TYPE,
-                (EntityRendererFactory.Context context) -> new TntEntityRenderer(context)
-        );
     }
 }

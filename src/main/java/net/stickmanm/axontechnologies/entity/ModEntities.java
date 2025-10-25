@@ -58,17 +58,41 @@ public class ModEntities {
                     FabricEntityTypeBuilder.create(SpawnGroup.MISC, ThunderaniumTntEntity::new)
                             .dimensions(EntityDimensions.fixed(0.6f,2f))
                             .build());*/
-    public static final EntityType<ThunderaniumTntEntity> THUNDERANIUM_TNT_ENTITY_ENTITY_TYPE =
+    public static final EntityType<ThunderaniumTntEntity> THUNDERANIUM_TNT_ENTITY_TYPE =
             Registry.register(
                     Registries.ENTITY_TYPE,
-                    new Identifier(AxonTechnologies.MOD_ID, "thunderanium_tnt_entity"),
+                    new Identifier(AxonTechnologies.MOD_ID, "primed_thunderanium_tnt"),
 
                     // 🟢 The builder creates an EntityType that links to the two-arg constructor.
                     // Explicitly defining the generic types here can sometimes resolve IDE issues.
                     EntityType.Builder.<ThunderaniumTntEntity>create(ThunderaniumTntEntity::new, SpawnGroup.MISC)
                             .setDimensions(0.98F, 0.98F)
                             .maxTrackingRange(10)
-                            .build("thunderanium_tnt_entity"));
+                            .build("primed_thunderanium_tnt"));
+
+    public static final EntityType<RedThunderaniumTntEntity> RED_THUNDERANIUM_TNT_ENTITY_TYPE =
+            Registry.register(
+                    Registries.ENTITY_TYPE,
+                    new Identifier(AxonTechnologies.MOD_ID, "primed_red_thunderanium_tnt"),
+
+                    // 🟢 The builder creates an EntityType that links to the two-arg constructor.
+                    // Explicitly defining the generic types here can sometimes resolve IDE issues.
+                    EntityType.Builder.<RedThunderaniumTntEntity>create(RedThunderaniumTntEntity::new, SpawnGroup.MISC)
+                            .setDimensions(0.98F, 0.98F)
+                            .maxTrackingRange(10)
+                            .build("primed_red_thunderanium_tnt"));
+
+    public static final EntityType<AxonAlloyTntEntity> AXON_ALLOY_TNT_ENTITY_TYPE =
+            Registry.register(
+                    Registries.ENTITY_TYPE,
+                    new Identifier(AxonTechnologies.MOD_ID, "primed_axon_alloy_tnt"),
+
+                    // 🟢 The builder creates an EntityType that links to the two-arg constructor.
+                    // Explicitly defining the generic types here can sometimes resolve IDE issues.
+                    EntityType.Builder.<AxonAlloyTntEntity>create(AxonAlloyTntEntity::new, SpawnGroup.MISC)
+                            .setDimensions(0.98F, 0.98F)
+                            .maxTrackingRange(10)
+                            .build("primed_axon_alloy_tnt"));
 
     public static void registerModEntities(){
         FabricDefaultAttributeRegistry.register(ModEntities.RED_ESSENCE_ZOMBIE, RedEssenceZombieEntity.setAttributes());

@@ -172,6 +172,38 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
 
 
+        //TNT
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.THUNDERANIUM_TNT)
+                .pattern("###")
+                .pattern("#T#")
+                .pattern("###")
+                .input('#', ModItems.THUNDERANIUM_INGOT)
+                .input('T', Blocks.TNT)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.THUNDERANIUM_INGOT),
+                        FabricRecipeProvider.conditionsFromItem(ModBlocks.THUNDERANIUM_TNT))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModBlocks.THUNDERANIUM_TNT)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.RED_THUNDERANIUM_TNT)
+                .pattern("###")
+                .pattern("#T#")
+                .pattern("###")
+                .input('#', ModItems.RED_THUNDERANIUM_INGOT)
+                .input('T', Blocks.TNT)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.RED_THUNDERANIUM_INGOT),
+                        FabricRecipeProvider.conditionsFromItem(ModBlocks.RED_THUNDERANIUM_TNT))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModBlocks.RED_THUNDERANIUM_TNT)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.AXON_ALLOY_TNT)
+                .pattern("###")
+                .pattern("#T#")
+                .pattern("###")
+                .input('#', ModItems.AXON_ALLOY)
+                .input('T', Blocks.TNT)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.AXON_ALLOY),
+                        FabricRecipeProvider.conditionsFromItem(ModBlocks.AXON_ALLOY_TNT))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModBlocks.AXON_ALLOY_TNT)));
+
+
         //Thundered Wood
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.THUNDERED_WOOD)

@@ -57,7 +57,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                     .add(ModBlocks.MWDC_ORE)
                     .add(ModBlocks.DCDC_ORE)
                     .add(ModBlocks.CLDC_ORE)
-                    .add(ModBlocks.TLDC_ORE);
+                    .add(ModBlocks.TLDC_ORE)
+                    .add(ModBlocks.RED_THUNDERANIUM_TNT)
+                    .add(ModBlocks.THUNDERANIUM_TNT);
 
             getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                     .add(ModBlocks.THUNDERED_LOG)
@@ -98,10 +100,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")))
                     .add(ModBlocks.VOID_COAL_ORE)
                     .add(ModBlocks.DREADSTONE_THUNDERANIUM_ORE)
+                    .add(ModBlocks.THUNDERANIUM_TNT)
                     .add(ModBlocks.VOID_COAL_BLOCK);
 
             getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
                     .add(ModBlocks.THUNDERANIUM_ORE)
+                    .add(ModBlocks.RED_THUNDERANIUM_TNT)
                     .add(ModBlocks.RENDERIUM_ORE);
 
             getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_6")))
@@ -112,6 +116,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                     .addTag(ModBlockTags.REINFORCED_DREADSTONE);
 
             getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_10")))
+                    .add(ModBlocks.AXON_ALLOY_TNT)
                     .add(ModBlocks.TLDC_ORE)
                     .add(ModBlocks.MWDC_ORE)
                     .add(ModBlocks.CLDC_ORE)

@@ -70,6 +70,11 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CORRUPTION_PORTAL_FRAME);
         addDrop(ModBlocks.CORRUPTION_BLOCK);
 
+        //TNT
+        addDrop(ModBlocks.THUNDERANIUM_TNT);
+        addDrop(ModBlocks.RED_THUNDERANIUM_TNT);
+        addDrop(ModBlocks.AXON_ALLOY_TNT);
+
 
 
 

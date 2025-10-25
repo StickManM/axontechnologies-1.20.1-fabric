@@ -10,16 +10,16 @@ import net.minecraft.world.World;
 import net.stickmanm.axontechnologies.entity.ModEntities;
 import org.jetbrains.annotations.Nullable;
 
-public class ThunderaniumTntEntity extends TntEntity {
+public class RedThunderaniumTntEntity extends TntEntity {
 
     // Default constructor for entity type creation
-    public ThunderaniumTntEntity(EntityType<? extends TntEntity> entityType, World world) {
+    public RedThunderaniumTntEntity(EntityType<? extends TntEntity> entityType, World world) {
         super(entityType, world);
     }
 
     // Constructor used when the block is primed
-    public ThunderaniumTntEntity(World world, double x, double y, double z, @Nullable LivingEntity igniter) {
-        this(ModEntities.THUNDERANIUM_TNT_ENTITY_TYPE, world); // Use your registered entity type
+    public RedThunderaniumTntEntity(World world, double x, double y, double z, @Nullable LivingEntity igniter) {
+        this(ModEntities.RED_THUNDERANIUM_TNT_ENTITY_TYPE, world); // Use your registered entity type
         this.setPosition(x, y, z);
         float f = this.getWorld().random.nextFloat() * (float)Math.PI * 2.0F; // 6.2831855F
         this.setVelocity(-((float)MathHelper.sin(f)) * 0.02F, 0.2F, -((float)MathHelper.cos(f)) * 0.02F);
@@ -55,7 +55,7 @@ public class ThunderaniumTntEntity extends TntEntity {
     // Override the core explosion logic
     protected void explode() {
         // Customize your explosion here
-        float explosionPower = 75.0F; // TNT is 4.0F. 6.0F is a bigger blast.
+        float explosionPower = 200f; // TNT is 4.0F. 6.0F is a bigger blast.
 
         // Explosion.DestructionType.BREAK causes block damage.
         // true sets the explosion to be 'Smoking' (fire)
