@@ -59,7 +59,7 @@ public class RedThunderaniumTntEntity extends TntEntity {
 
         // Explosion.DestructionType.BREAK causes block damage.
         // true sets the explosion to be 'Smoking' (fire)
-        this.getWorld().createExplosion(this, this.getX(), this.getBodyY(1), this.getZ(),
+        this.getWorld().createExplosion(this, this.getX(), this.getBodyY(2), this.getZ(),
                 explosionPower, false, World.ExplosionSourceType.TNT);
 
         // Add custom status effects or other events here

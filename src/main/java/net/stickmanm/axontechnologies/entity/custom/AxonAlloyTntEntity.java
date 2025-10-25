@@ -55,11 +55,11 @@ public class AxonAlloyTntEntity extends TntEntity {
     // Override the core explosion logic
     protected void explode() {
         // Customize your explosion here
-        float explosionPower = 750f; // TNT is 4.0F. 6.0F is a bigger blast.
+        float explosionPower = 505f; // TNT is 4.0F. 6.0F is a bigger blast.
 
         // Explosion.DestructionType.BREAK causes block damage.
         // true sets the explosion to be 'Smoking' (fire)
-        this.getWorld().createExplosion(this, this.getX(), this.getBodyY(10), this.getZ(),
+        this.getWorld().createExplosion(this, this.getX(), this.getBodyY(3), this.getZ(),
                 explosionPower, false, World.ExplosionSourceType.TNT);
 
         // Add custom status effects or other events here
