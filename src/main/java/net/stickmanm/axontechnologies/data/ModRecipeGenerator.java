@@ -188,7 +188,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .pattern("#T#")
                 .pattern("###")
                 .input('#', ModItems.RED_THUNDERANIUM_INGOT)
-                .input('T', Blocks.TNT)
+                .input('T', ModBlocks.THUNDERANIUM_TNT)
                 .criterion(FabricRecipeProvider.hasItem(ModItems.RED_THUNDERANIUM_INGOT),
                         FabricRecipeProvider.conditionsFromItem(ModBlocks.RED_THUNDERANIUM_TNT))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModBlocks.RED_THUNDERANIUM_TNT)));
@@ -198,7 +198,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .pattern("#T#")
                 .pattern("###")
                 .input('#', ModItems.AXON_ALLOY)
-                .input('T', Blocks.TNT)
+                .input('T', ModBlocks.RED_THUNDERANIUM_TNT)
                 .criterion(FabricRecipeProvider.hasItem(ModItems.AXON_ALLOY),
                         FabricRecipeProvider.conditionsFromItem(ModBlocks.AXON_ALLOY_TNT))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModBlocks.AXON_ALLOY_TNT)));
